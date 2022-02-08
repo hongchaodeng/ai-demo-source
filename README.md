@@ -1,2 +1,4 @@
-# ai-demo-source
-Source code of ai-demo
+# AI Demo Source Code
+
+This example application includes a [training job](train.py) and an [inference service](api.py).
+

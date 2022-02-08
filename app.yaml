@@ -1,0 +1,23 @@
+metadata:
+  name: ai-demo
+  namespace: default
+  stack: python-jupyter
+
+build:
+  env:
+    MODEL_DIR: /home/jovyan
+    MODEL_FILE_LDA: clf_lda.joblib
+    MODEL_FILE_NN: clf_nn.joblib
+  run: |
+    python3 train.py
+
+deploy:
+  cmd:
+    - python3
+    - api.py
+  port: 5000
+
+  scaling:
+    auto:
+      min: 1
+      max: 5
